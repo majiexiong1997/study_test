@@ -1,0 +1,16 @@
+cat:
+  name: tom
+  color: 蓝猫
+  age: 4
+  gender: 公
+  hair: 短毛
+
+dog:    &d
+  name: feizhai
+  color: 牧羊犬
+  age: 6
+  gender: 母
+  hair: 长毛
+
+d:
+  <<: *d

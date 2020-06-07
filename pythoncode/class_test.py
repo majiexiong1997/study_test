@@ -1,11 +1,16 @@
+import yaml
+
+
 class Animal(object):
-    def __init__(self,name,color,age,gender):
+    def __init__(self, name, color, age, gender):
         self.name = name
         self.color = color
         self.age = age
         self.gender = gender
+
     def call(self):
         print('这个动物会叫')
+
     def run(self):
         print('这个动物会跑')
 
@@ -30,12 +35,17 @@ class dog(Animal):
 
 
 if __name__ == '__main__':
+    yaml.warnings({'YAMLLoadWarning': False})
+    with open('test.yml', 'rb') as f:
+        all_data = yaml.load(f)
+        print(all_data)
 
-    cat = cat('tom','蓝猫','4','公','短毛')
+    cat_data = all_data['cat']
+    dog_data = all_data['d']
+
+    cat = cat(cat_data['name'], cat_data['color'], cat_data['age'], cat_data['gender'], cat_data['hair'])
     print(f'{cat.name},{cat.color},{cat.age},{cat.gender},{cat.hair}')
     cat.catch_mouse()
-    dog = dog('feizhai','牧羊犬','6','母','长毛')
+    dog = dog(dog_data['name'], dog_data['color'], dog_data['age'], dog_data['gender'], dog_data['hair'])
     print(f'{dog.name},{dog.color},{dog.age},{dog.gender},{dog.hair}')
     dog.watch_house()
-
-
