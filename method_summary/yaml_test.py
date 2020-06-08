@@ -1,7 +1,7 @@
 import yaml
 
 
-class yaml_load(object):
+class yaml_load1(object):
     '''文件读取'''
 
     def __init__(self, yaml_file):
@@ -34,7 +34,7 @@ class yaml_dump(object):
 
 
 if __name__ == '__main__':
-    a = yaml_load(r'C:\Users\v_jxjxma\PycharmProjects\study_obj\pythoncode\test.yml')
+    a = yaml_load1(r'C:\Users\v_jxjxma\PycharmProjects\study_obj\pythoncode\test.yml')
     a.load_yaml()
     b = yaml_dump()
     b.dump_yaml('123.yml', {'a': 1, 'b': 2, 'c': '3'})
