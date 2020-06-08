@@ -39,7 +39,7 @@ if __name__ == '__main__':
     # with open('test.yml', 'rb') as f:
     #     all_data = yaml.load(f)
     #     print(all_data)
-    a = yaml_test.yaml_load1('test.yml').load_yaml()
+    a = yaml_test.yaml_load('test.yml').load_yaml()
     cat_data = a['cat']
     dog_data = a['d']
     #
