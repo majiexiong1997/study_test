@@ -1,5 +1,5 @@
 import yaml
-
+from method_summary import yaml_test
 
 class Animal(object):
     def __init__(self, name, color, age, gender):
@@ -36,13 +36,13 @@ class dog(Animal):
 
 if __name__ == '__main__':
     yaml.warnings({'YAMLLoadWarning': False})
-    with open('test.yml', 'rb') as f:
-        all_data = yaml.load(f)
-        print(all_data)
-
-    cat_data = all_data['cat']
-    dog_data = all_data['d']
-
+    # with open('test.yml', 'rb') as f:
+    #     all_data = yaml.load(f)
+    #     print(all_data)
+    a = yaml_test.yaml_load('test.yml').load_yaml()
+    cat_data = a['cat']
+    dog_data = a['d']
+    #
     cat = cat(cat_data['name'], cat_data['color'], cat_data['age'], cat_data['gender'], cat_data['hair'])
     print(f'{cat.name},{cat.color},{cat.age},{cat.gender},{cat.hair}')
     cat.catch_mouse()
