@@ -14,7 +14,7 @@ class yaml_load(object):
 
     def load_yaml(self):
         all_data = yaml.safe_load(self.cfg)
-        return all_data
+
 
 
 class yaml_dump(object):
